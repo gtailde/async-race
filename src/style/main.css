@@ -49,7 +49,6 @@
     background-color: green;
     color: beige;
 }
-  
 
 .garage-title {
     color: white;
@@ -86,9 +85,32 @@
     border: 1px solid green;
     padding: 5px 7px;
     margin: 14px 0;
+    transition: border 0.3s, color 0.3s;
+}
+
+.btn-a {
+    color: green;
+    border: 1px solid green;
+}
+
+.btn-b {
+    color: rgb(211, 62, 62);
+    border: 1px solid rgb(211, 62, 62);
+}
+
+.control-btn:disabled {
+    color: grey;
+    border: 1px solid grey;
+    cursor: default;
+}
+
+.control-btn:not([disabled]):hover {
+    color: lightblue;
+    border: 1px solid lightblue;
 }
 
 .game-container {
+    position: relative;
     display: flex;
     align-items: end;
     gap: 20px;
@@ -97,4 +119,13 @@
 .car-icon {
     width: 120px;
     height: 60px;
+}
+
+.finish-icon {
+    position: absolute;
+    right: 125px;
+    width: 40px;
+    height: 40px;
+    background: url(../assets/icon/finish-icon.png) no-repeat;
+    background-size: cover;
 }
