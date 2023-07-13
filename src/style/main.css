@@ -1,0 +1,100 @@
+.car-controller {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conroller-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.race,
+.reset {
+    width: 76px;
+}
+
+.btn-light {
+    padding: 3px 6px 1px;
+    background-color: rgb(191, 245, 98);
+    border-bottom: solid 3px rgb(179, 158, 115);
+    transition: background-color 0.3s, border-bottom-color 0.3s, color 0.3s;
+}
+
+.btn-light:hover {
+    background-color: rgb(143, 201, 43);
+}
+  
+.btn-light:active {
+    background-color: rgb(179, 158, 115);
+    border-bottom-color: rgb(191, 245, 98);
+    color: beige;
+}
+
+.btn-dark {
+    padding: 3px 6px 1px;
+    border-bottom: solid 3px green;
+    background-color: rgb(97, 237, 191);
+    transition: background-color 0.3s, border-bottom-color 0.3s, color 0.3s;
+}
+  
+.btn-dark:hover {
+    background-color: rgb(67, 202, 157);
+}
+
+.btn-dark:active {
+    border-bottom-color: rgb(97, 237, 191);
+    background-color: green;
+    color: beige;
+}
+  
+
+.garage-title {
+    color: white;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.page-count {
+    color: white;
+    margin-top: 10px;
+}
+
+.car-container__item {
+    margin-top: 20px;
+    border-bottom: 3px dashed white;
+}
+
+.car-settings {
+    display: flex;
+    gap: 5px;
+}
+
+.car-name {
+    color: gold;
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.control-btn {
+    background: transparent;
+    border-radius: 4px;
+    color: green;
+    border: 1px solid green;
+    padding: 5px 7px;
+    margin: 14px 0;
+}
+
+.game-container {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+
+.car-icon {
+    width: 120px;
+    height: 60px;
+}

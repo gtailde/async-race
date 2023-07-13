@@ -1,0 +1,30 @@
+@import url(./style/header.css);
+@import url(./style/main.css);
+@import url(./style/footer.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(55, 55, 55);
+}
+
+.container {
+    margin: 10px 0 0 5px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 2px;
+    border: none;
+    text-transform: uppercase;
+}
+
+input[type="text"] {
+    all: unset;
+    background-color: white;
+    height: 25px;
+}
