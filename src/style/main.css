@@ -23,11 +23,11 @@
     transition: background-color 0.3s, border-bottom-color 0.3s, color 0.3s;
 }
 
-.btn-light:hover {
+.btn-light:not(:disabled):hover {
     background-color: rgb(143, 201, 43);
 }
   
-.btn-light:active {
+.btn-light:not(:disabled):active {
     background-color: rgb(179, 158, 115);
     border-bottom-color: rgb(191, 245, 98);
     color: beige;
@@ -40,14 +40,19 @@
     transition: background-color 0.3s, border-bottom-color 0.3s, color 0.3s;
 }
   
-.btn-dark:hover {
+.btn-dark:not(:disabled):hover {
     background-color: rgb(67, 202, 157);
 }
 
-.btn-dark:active {
+.btn-dark:not(:disabled):active {
     border-bottom-color: rgb(97, 237, 191);
     background-color: green;
     color: beige;
+}
+
+.btn-light:disabled,
+.btn-dark:disabled {
+    opacity: .6;
 }
 
 .garage-title {
@@ -78,6 +83,11 @@
     font-weight: 300;
 }
 
+.car-control {
+    display: flex;
+    gap: 5px;
+}
+
 .control-btn {
     background: transparent;
     border-radius: 4px;
@@ -101,7 +111,6 @@
 .control-btn:disabled {
     color: grey;
     border: 1px solid grey;
-    cursor: default;
 }
 
 .control-btn:not([disabled]):hover {

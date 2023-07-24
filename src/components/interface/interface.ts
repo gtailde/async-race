@@ -3,7 +3,7 @@ interface ICar {
     color: string;
     id: number;
 }
-  
+
 interface IWinner {
     id: number;
     wins: number;
@@ -11,7 +11,7 @@ interface IWinner {
 }
 
 interface IEngine {
-    velocity: number; 
+    velocity: number;
     distance: number;
 }
 
@@ -19,4 +19,11 @@ interface IQueryParams {
     [key: string]: string | number | boolean | undefined;
 }
 
-export { ICar, IWinner, IEngine, IQueryParams }
+interface ICarsResponse {
+    totalCount: number;
+    cars: ICar[];
+}
+
+export {
+  ICar, IWinner, IEngine, IQueryParams, ICarsResponse,
+};
