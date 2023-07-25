@@ -15,7 +15,7 @@ class RenderMainPg {
     this.garageBtnState = [true, false];
   }
 
-  drawHeader():void {
+  private drawHeader(): void {
     const header = createHtmlElement('header', 'header');
     const garageBtn = <HTMLButtonElement>createHtmlElement('garage btn-dark', 'button', 'to garage');
     garageBtn.disabled = true;
@@ -26,7 +26,7 @@ class RenderMainPg {
     this.drawMain();
   }
 
-  async drawMain():Promise<void> {
+  private async drawMain():Promise<void> {
     const garageContainer = createHtmlElement('garage-container');
     const controllerContainer = createHtmlElement('car-controller controller-container');
     for (let i = 0; i < 3; i += 1) {
@@ -57,7 +57,7 @@ class RenderMainPg {
     this.renderCartContainer(garageContainer as HTMLDivElement, carsData);
   }
 
-  renderCartContainer(garageContainer: HTMLDivElement, carsData: ICarsResponse): void {
+  private renderCartContainer(garageContainer: HTMLDivElement, carsData: ICarsResponse): void {
     const main = createHtmlElement('main', 'main');
     const garageTitle = createHtmlElement('garage-title', 'h1', `Garage (${carsData.totalCount})`);
     const pageCount = createHtmlElement('page-count', 'h3', `Page #${mainHandler.currentGaragePage}`);
@@ -71,7 +71,7 @@ class RenderMainPg {
     this.drawFooter();
   }
 
-  public async addCars() {
+  public async addCars(): Promise<void> {
     const carContainer = <HTMLDivElement>document.querySelector('.car-container');
     const carsData = await api.getCars(mainHandler.currentGaragePage, 7);
     carContainer.innerHTML = '';
@@ -121,7 +121,7 @@ class RenderMainPg {
     }, 8000);
   }
 
-  renderPage():void {
+  renderPage(): void {
     this.drawHeader();
   }
 }

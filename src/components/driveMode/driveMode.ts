@@ -11,7 +11,7 @@ class DriveMode {
 
   public status: 'drive' | 'race' | null = null;
 
-  public driveCar(carIcon: HTMLDivElement, time: number, carIndex: number, velocity?: number) {
+  public driveCar(carIcon: HTMLDivElement, time: number, carIndex: number, velocity?: number):void {
     const endPosition = window.innerWidth - 205;
     const timeToFinish = velocity ? 5000 / (velocity * 7) : 0;
     const speed = endPosition / time;
@@ -46,7 +46,7 @@ class DriveMode {
     this.activeCars.push(carIndex);
   }
 
-  async stopCar(carIndex: number) {
+  async stopCar(carIndex: number): Promise<void> {
     await api.startOrStopEngine(carIndex, 'stopped');
     const indexInActiveCars = this.activeCars.indexOf(carIndex);
     const intervalId = this.intervalIds[indexInActiveCars];
@@ -64,7 +64,7 @@ class DriveMode {
     }
   }
 
-  resetCars(carIcons: HTMLDivElement[]) {
+  resetCars(carIcons: HTMLDivElement[]): void {
     carIcons.forEach((carIcon) => {
       const gameContainer = <HTMLDivElement>carIcon.closest('.game-container');
       const btnA = <HTMLButtonElement>gameContainer.querySelector('.btn-a');
