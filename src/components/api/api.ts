@@ -1,5 +1,5 @@
 import {
-  ICar, IWinner, IEngine, IQueryParams, ICarsResponse,
+  ICar, IWinner, IEngine, IQueryParams, ICarsResponse, IGetWinners, IWinnersResponse,
 } from '../interface/interface';
 
 class Api {
@@ -109,16 +109,17 @@ class Api {
     }
   }
 
-  public async getWinners(page?: number, limit?: number, sort?: 'id' | 'wins' | 'time', order?: 'ASC' | 'DESC'): Promise<IWinner[]> {
+  public async getWinners(page?: number, limit?: number, sort?: IGetWinners['sort'], order?: IGetWinners['order']): Promise<IWinnersResponse> {
     try {
       const url = `${this.baseUrl}/winners`;
       const queryParams = this.buildQueryParams({
         _page: page, _limit: limit, _sort: sort, _order: order,
       });
       const response = await fetch(`${url}${queryParams}`);
-      // const totalCountHeader = response.headers.get('X-Total-Count');
-      // const totalCount = totalCountHeader ? parseInt(totalCountHeader, 10) : 0;
-      return response.json();
+      const totalCountHeader = response.headers.get('X-Total-Count');
+      const totalWinnersCount = totalCountHeader ? parseInt(totalCountHeader, 10) : 0;
+      const winners: IWinner[] = await response.json();
+      return { totalCount: totalWinnersCount, winners };
     } catch (error) {
       console.error(error);
       throw error;

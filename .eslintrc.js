@@ -17,6 +17,7 @@ module.exports = {
     "no-console": "off",
     'no-undef': 'off',
     'no-param-reassign': 'off',
+    'no-unused-expressions': 'off',
     "class-methods-use-this": "off",
     'import/no-unresolved': 'off',
     'import/extensions': ['error', 'ignorePackages', {

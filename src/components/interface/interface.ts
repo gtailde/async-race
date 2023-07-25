@@ -10,6 +10,11 @@ interface IWinner {
     time: number;
 }
 
+interface IWinnersResponse {
+    totalCount: number;
+    winners: IWinner[];
+}
+
 interface IEngine {
     velocity: number;
     distance: number;
@@ -24,6 +29,11 @@ interface ICarsResponse {
     cars: ICar[];
 }
 
+interface IGetWinners {
+    sort: 'id' | 'wins' | 'time',
+    order: 'ASC' | 'DESC',
+}
+
 export {
-  ICar, IWinner, IEngine, IQueryParams, ICarsResponse,
+  ICar, IWinner, IEngine, IQueryParams, ICarsResponse, IGetWinners, IWinnersResponse,
 };

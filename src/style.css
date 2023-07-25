@@ -2,6 +2,7 @@
 @import url(./style/main.css);
 @import url(./style/footer.css);
 @import url(./style/popup.css);
+@import url(./style/winner-pg.css);
 
 * {
     margin: 0;

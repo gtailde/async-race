@@ -55,13 +55,15 @@
     opacity: .6;
 }
 
-.garage-title {
+.garage-title,
+.winner-title {
     color: white;
     font-size: 30px;
     margin-top: 30px;
 }
 
-.page-count {
+.page-count,
+.winner-pg-count {
     color: white;
     margin-top: 10px;
 }
